@@ -6,7 +6,7 @@ const getAllCharacters = ()=>{
     return service.get("/character/all")
 }
 
-const getACharacter = (charID: IdCharacter)=>{
+const getACharacter = (charID: string)=>{
     return service.get(`/character/${charID}/details`)
 }
 

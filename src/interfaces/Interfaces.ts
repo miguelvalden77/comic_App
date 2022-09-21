@@ -16,6 +16,7 @@ interface item {
 
 export default interface character {
     id: number,
+    description?: string,
     name: string,
     thumbnail: {
         path: string,
@@ -30,4 +31,10 @@ export default interface character {
         available: number,
         items: [item]
     }
+}
+
+
+export default interface AppState{
+    username: string,
+    comicArr?: [string]
 }
