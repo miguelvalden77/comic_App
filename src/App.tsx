@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {Route, Routes} from "react-router-dom"
 import './App.css'
 import Navbar from './components/Navbar'
+import CharacterDetails from './pages/CharacterDetails'
 import Characters from './pages/Characters'
 
 // Components
@@ -23,6 +24,7 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/characters/all' element={<Characters/>}/>
+        <Route path='/characters/:charId/details' element={<CharacterDetails/>}/>
       </Routes>
     </div>
   )
