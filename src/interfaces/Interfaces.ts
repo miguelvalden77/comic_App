@@ -34,7 +34,17 @@ export default interface character {
 }
 
 
-export default interface AppState{
-    username: string,
-    comicArr?: [string]
+interface url{
+    url: string
+}
+
+export interface comic {
+    id: number,
+    title: string,
+    description?: string,
+    thumbnail: {
+        path: string,
+        extension: string
+    },
+    urls: [url]
 }

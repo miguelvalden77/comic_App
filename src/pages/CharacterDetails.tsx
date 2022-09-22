@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import {getACharacter} from "../services/character.service"
 import character from "../interfaces/Interfaces"
-import item from "../interfaces/Interfaces"
-import {Link} from "react-router-dom"
 
 
 const CharacterDetails = ()=>{
@@ -18,7 +16,7 @@ const CharacterDetails = ()=>{
 
     const getData = async (id: string): Promise <void>=>{
         const response = await getACharacter(id)
-        console.log(response.data.results[0])
+        console.log(response.data.results[0].series.items)
         setCharacter(response.data.results[0])
         setLoader(false)
     }
@@ -37,14 +35,17 @@ const CharacterDetails = ()=>{
         <section>
             <h3>{character?.name} appears in {character?.comics.available} comics</h3>
             {character?.comics.items.map(e=>{
-                return <p>{e.name}</p>
+                const comicId = e.resourceURI.slice(-5)
+                return <Link to={`/comic/${comicId}/details`}>{e.name}</Link>
             })}
         </section>
 
         <section>
             <h3>{character?.name} appears in {character?.series.available} series</h3>
             {character?.series.items.map(e=>{
-                return <h3>{e.name}</h3>
+                const serieId = e.resourceURI.split("/")[6]
+                console.log(serieId)
+                return <Link to={`/serie/${serieId}/details`}>{e.name}</Link>
             })}
         </section>
     </main>

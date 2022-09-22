@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import {getAllCharacters} from "../services/character.service"
 import character from "../interfaces/Interfaces"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 
 const Characters = ():JSX.Element =>{
+
+    const navigate = useNavigate()
 
     const [characters, setCharacters] = useState<[character]>()
     const [loader, setLoader] = useState<boolean>(true)
@@ -16,10 +18,15 @@ const Characters = ():JSX.Element =>{
     }, [])
 
     const getData = async (): Promise <void> =>{
-        //arreglo dato
-        const response: any = await getAllCharacters()
-        setCharacters(response.data)
-        setLoader(false)
+
+        try{
+            const response: any = await getAllCharacters()
+            setCharacters(response.data)
+            setLoader(false)
+        }
+        catch(error){
+            navigate("/error")
+        }
     }
 
 
@@ -29,7 +36,7 @@ const Characters = ():JSX.Element =>{
     return <main>
         {
             characters?.map((e, index)=>{
-                return <article>
+                return <article key={index}>
                     <img src={`${e.thumbnail.path}.${e.thumbnail.extension}`} alt={e.name} />
                     <Link to={`/characters/${e.id}/details`}><h3 key={index}>{e.name}</h3></Link>
                 </article>

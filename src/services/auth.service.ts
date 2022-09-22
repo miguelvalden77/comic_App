@@ -10,8 +10,8 @@ const loginUser = (newUser: newUser)=>{
     return service.post("/auth/login", newUser)
 }
 
-const verifyService = (token: any)=>{
-    return service.get("/auth/verify", token)
+const verifyService = ()=>{
+    return service.get("/auth/verify")
 }
 
 
