@@ -36,6 +36,16 @@ const Comic = ():JSX.Element =>{
         <img src={`${comic?.thumbnail.path}.${comic?.thumbnail.extension}`} alt={comic?.title} />
         <p>{comic?.description}</p>
         <a href={`${comic?.urls[0].url}`}>Link externo</a>
+
+        <section>
+            <h2>Creators</h2>
+            {comic?.creators.items.map((e, index)=>{
+                return <div key={index}>
+                    <h3>{e.name}</h3>
+                    <p>{e.role}</p>
+                </div>
+            })}
+        </section>
     </article>
 
 }

@@ -38,6 +38,12 @@ interface url{
     url: string
 }
 
+interface creator{
+    resourceURI: string,
+    name: string,
+    role: string
+}
+
 export interface comic {
     id: number,
     title: string,
@@ -46,5 +52,8 @@ export interface comic {
         path: string,
         extension: string
     },
-    urls: [url]
+    urls: [url],
+    creators: {
+        items: [creator]
+    }
 }

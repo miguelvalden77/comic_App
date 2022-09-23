@@ -6,6 +6,7 @@ import CharacterDetails from './pages/CharacterDetails'
 import Characters from './pages/Characters'
 import NotFound from './pages/errors/NotFound'
 import Error from "./pages/errors/Error"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // Components
 

@@ -34,18 +34,17 @@ const CharacterDetails = ()=>{
 
         <section>
             <h3>{character?.name} appears in {character?.comics.available} comics</h3>
-            {character?.comics.items.map(e=>{
+            {character?.comics.items.map((e, index)=>{
                 const comicId = e.resourceURI.slice(-5)
-                return <Link to={`/comic/${comicId}/details`}>{e.name}</Link>
+                return <Link key={index} to={`/comic/${comicId}/details`}>{e.name}</Link>
             })}
         </section>
 
         <section>
             <h3>{character?.name} appears in {character?.series.available} series</h3>
-            {character?.series.items.map(e=>{
+            {character?.series.items.map((e, index)=>{
                 const serieId = e.resourceURI.split("/")[6]
-                console.log(serieId)
-                return <Link to={`/serie/${serieId}/details`}>{e.name}</Link>
+                return <Link key={index} to={`/serie/${serieId}/details`}>{e.name}</Link>
             })}
         </section>
     </main>
