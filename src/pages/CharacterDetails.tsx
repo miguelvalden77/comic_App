@@ -19,14 +19,13 @@ const CharacterDetails = ()=>{
 
     const getData = async (id: string): Promise <void>=>{
         const response = await getACharacter(id)
-        console.log(response.data.results[0].series.items)
         setCharacter(response.data.results[0])
         setLoader(false)
     }
 
 
     if(loader)
-    return <p className="loader">Loading ...</p>
+    return <h3 className="loader">Loading ...</h3>
 
     return <main className="detail-container">
         <article className="detail-card">

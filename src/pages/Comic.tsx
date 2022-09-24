@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import {useParams, useNavigate} from "react-router-dom"
 import {getAComic} from "../services/comic.service"
 import {comic} from "../interfaces/Interfaces"
+import {Button} from "react-bootstrap"
 
 const Comic = ():JSX.Element =>{
 
@@ -32,19 +33,26 @@ const Comic = ():JSX.Element =>{
     return <h3 className="loader">Loading ...</h3>
 
     return <article>
-        <h3>{comic?.title}</h3>
-        <img src={`${comic?.thumbnail.path}.${comic?.thumbnail.extension}`} alt={comic?.title} />
-        <p>{comic?.description}</p>
-        <a href={`${comic?.urls[0].url}`}>Link externo</a>
+
+        <section className="detail-card">
+            <h3 className="detail-name">{comic?.title}</h3>
+            <div className="detail-img">
+                <img src={`${comic?.thumbnail.path}.${comic?.thumbnail.extension}`} alt={comic?.title} />
+            </div>
+            <p className="description">{comic?.description}</p>
+            <a className="link t-center" href={`${comic?.urls[0].url}`}><Button variant="outline-danger">Official Web</Button></a>
+        </section>
 
         <section>
-            <h2>Creators</h2>
-            {comic?.creators.items.map((e, index)=>{
-                return <div key={index}>
-                    <h3>{e.name}</h3>
-                    <p>{e.role}</p>
-                </div>
-            })}
+            <h2 className="t-center">Creators</h2>
+            <div className="creators-container">
+                {comic?.creators.items.map((e, index)=>{
+                    return <div className="creator" key={index}>
+                        <h3 className="creator-name">{e.name}</h3>
+                        <p>{e.role}</p>
+                    </div>
+                })}
+            </div>
         </section>
     </article>
 

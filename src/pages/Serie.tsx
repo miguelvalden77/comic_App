@@ -36,7 +36,7 @@ const Serie = ():JSX.Element =>{
         <div className="detail-img">
             <img src={`${serie?.thumbnail.path}.${serie?.thumbnail.extension}`} alt={serie?.title} />
         </div>
-        <p>{serie?.description}</p>
+        <p className="description">{serie?.description}</p>
         <a className="link t-center" href={`${serie?.urls[0].url}`}><Button variant="outline-warning">Official Web</Button></a>
     </article>
 

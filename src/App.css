@@ -12,7 +12,9 @@ a{
 
 .app{
     font-family: "Kanit";
-    height: 100vh;
+    min-height: 100vh;
+    background-color: rgb(105, 104, 104);
+    color: whitesmoke;
 }
 
 .t-center{
@@ -92,6 +94,7 @@ div.carousel.slide{
 
 .character-img{
     overflow: hidden;
+    height: 220px;
 }
 
 .character-name{
@@ -112,7 +115,12 @@ div.carousel.slide{
 
 .detail-card{
     padding-top: 4rem;
-    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.description{
+    margin-inline: 1rem;
+    text-align: center;
 }
 
 .detail-name{
@@ -155,3 +163,23 @@ div.carousel.slide{
     justify-content: center;
 }
 
+.creators-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.creator{
+    border: 2px whitesmoke solid;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.creator-name{
+    border-bottom: 1px solid whitesmoke;
+    color: rgb(250, 134, 71);
+}
