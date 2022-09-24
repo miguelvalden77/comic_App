@@ -25,11 +25,13 @@ const CharacterDetails = ()=>{
     if(loader)
     return <p>Loading ...</p>
 
-    return <main>
-        <article>
-            <img src={`${character?.thumbnail.path}.${character?.thumbnail.extension}`} alt={character?.name} />
-            <h3>{character?.name}</h3>
-            <p>{character?.description}</p>
+    return <main className="detail-container">
+        <article className="detail-card">
+            <div className="detail-img">
+                <img src={`${character?.thumbnail.path}.${character?.thumbnail.extension}`} alt={character?.name} />
+            </div>
+            <h3 className="detail-name">{character?.name}</h3>
+            <p className="detail-description">{character?.description}</p>
         </article>
 
         <section>

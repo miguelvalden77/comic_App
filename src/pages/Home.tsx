@@ -1,6 +1,8 @@
-import bg1 from "../assets/wallpaper_marvel_1.jpg"
+import bg1 from "../assets/wallpaper_1.webp"
+import bg2 from "../assets/wallpaper_2.jpeg"
+import bg3 from "../assets/wallpaper_3.jpg"
 // Estilos
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from 'react-bootstrap/Carousel'
 
 
 const Home = ():JSX.Element =>{
@@ -19,7 +21,7 @@ const Home = ():JSX.Element =>{
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
+          src={bg2}
           alt="Second slide"
         />
 
@@ -27,7 +29,7 @@ const Home = ():JSX.Element =>{
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+          src={bg3}
           alt="Third slide"
         />
       </Carousel.Item>

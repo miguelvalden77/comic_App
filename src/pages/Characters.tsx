@@ -33,12 +33,14 @@ const Characters = ():JSX.Element =>{
     if(loader === true)
     return <h3>Loading ...</h3>
 
-    return <main>
+    return <main className="character-container">
         {
             characters?.map((e, index)=>{
-                return <article key={index}>
-                    <img src={`${e.thumbnail.path}.${e.thumbnail.extension}`} alt={e.name} />
-                    <Link to={`/characters/${e.id}/details`}><h3 key={index}>{e.name}</h3></Link>
+                return <article key={index} className="character-card">
+                    <div className="character-img">
+                        <img src={`${e.thumbnail.path}.${e.thumbnail.extension}`} alt={e.name} />
+                    </div>
+                    <Link className="character-name" to={`/characters/${e.id}/details`}><h5 key={index}>{e.name}</h5></Link>
                 </article>
             })
         }
