@@ -18,7 +18,7 @@ import Serie from './pages/Serie'
 function App() {
 
   return (
-    <div>
+    <div className='app'>
 
       <Navbar/>
 

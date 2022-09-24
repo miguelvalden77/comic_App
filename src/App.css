@@ -4,6 +4,21 @@
     margin: 0;
 }
 
+a{
+    text-decoration: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap');
+
+.app{
+    font-family: "Kanit";
+    height: 100vh;
+}
+
+.t-center{
+   text-align: center;
+   display: block;
+}
 
 .link{
     text-decoration: none;
@@ -76,8 +91,6 @@ div.carousel.slide{
 }
 
 .character-img{
-    width: 100%;
-    height: 240px;
     overflow: hidden;
 }
 
@@ -90,11 +103,16 @@ div.carousel.slide{
     display: block;
 }
 
-.detail-card{
+.detail-img{
     width: 320px;
     height: 380px;
+    margin: auto;
+    padding-bottom: 0.5rem;
+}
+
+.detail-card{
     padding-top: 4rem;
-    margin-bottom: 6rem;
+    margin-bottom: 1.25rem;
 }
 
 .detail-name{
@@ -105,9 +123,35 @@ div.carousel.slide{
     text-align: center;
 }
 
+
 .detail-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    background-color: #080808c9;
+    color: whitesmoke;
 }
+
+.loader{
+    text-align: center;
+    padding: 30%;
+}
+
+.section{
+    border-top: 1px solid grey;
+    margin-bottom: 1rem;
+}
+
+.section-title{
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.comics-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+

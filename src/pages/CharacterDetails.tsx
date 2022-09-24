@@ -3,6 +3,9 @@ import {useParams, Link} from "react-router-dom"
 import {getACharacter} from "../services/character.service"
 import character from "../interfaces/Interfaces"
 
+//
+import { Button } from "react-bootstrap"
+
 
 const CharacterDetails = ()=>{
 
@@ -23,7 +26,7 @@ const CharacterDetails = ()=>{
 
 
     if(loader)
-    return <p>Loading ...</p>
+    return <p className="loader">Loading ...</p>
 
     return <main className="detail-container">
         <article className="detail-card">
@@ -34,20 +37,24 @@ const CharacterDetails = ()=>{
             <p className="detail-description">{character?.description}</p>
         </article>
 
-        <section>
-            <h3>{character?.name} appears in {character?.comics.available} comics</h3>
-            {character?.comics.items.map((e, index)=>{
-                const comicId = e.resourceURI.slice(-5)
-                return <Link key={index} to={`/comic/${comicId}/details`}>{e.name}</Link>
-            })}
+        <section className="section">
+            <h3 className="section-title">{character?.name} appears in {character?.comics.available} comics</h3>
+            <div className="comics-container">
+                {character?.comics.items.map((e, index)=>{
+                    const comicId = e.resourceURI.slice(-5)
+                    return <Link key={index} to={`/comic/${comicId}/details`}><Button className="button-comic" variant="secondary">{e.name}</Button></Link>
+                })}
+            </div>
         </section>
 
-        <section>
-            <h3>{character?.name} appears in {character?.series.available} series</h3>
-            {character?.series.items.map((e, index)=>{
-                const serieId = e.resourceURI.split("/")[6]
-                return <Link key={index} to={`/serie/${serieId}/details`}>{e.name}</Link>
-            })}
+        <section className="section">
+            <h3 className="section-title">{character?.name} appears in {character?.series.available} series</h3>
+            <div className="comics-container">
+                {character?.series.items.map((e, index)=>{
+                    const serieId = e.resourceURI.split("/")[6]
+                    return <Link key={index} to={`/serie/${serieId}/details`}><Button variant="primary">{e.name}</Button></Link>
+                })}
+            </div>
         </section>
     </main>
 

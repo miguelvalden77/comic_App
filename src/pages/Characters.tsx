@@ -31,7 +31,7 @@ const Characters = ():JSX.Element =>{
 
 
     if(loader === true)
-    return <h3>Loading ...</h3>
+    return <h3 className="loader">Loading ...</h3>
 
     return <main className="character-container">
         {

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import {useParams, useNavigate} from "react-router-dom"
 import {getASerie} from "../services/serie.service"
 import {comic} from "../interfaces/Interfaces"
+import {Button} from "react-bootstrap"
 
 const Serie = ():JSX.Element =>{
 
@@ -28,13 +29,15 @@ const Serie = ():JSX.Element =>{
     }
 
     if(loader === true)
-    return <h3>Loading ...</h3>
+    return <h3 className="loader">Loading ...</h3>
 
-    return <article>
-        <h2>{serie?.title}</h2>
-        <img src={`${serie?.thumbnail.path}.${serie?.thumbnail.extension}`} alt={serie?.title} />
+    return <article className="detail-card">
+        <h2 className="detail-name">{serie?.title}</h2>
+        <div className="detail-img">
+            <img src={`${serie?.thumbnail.path}.${serie?.thumbnail.extension}`} alt={serie?.title} />
+        </div>
         <p>{serie?.description}</p>
-        <a href={`${serie?.urls[0].url}`}>Link externo</a>
+        <a className="link t-center" href={`${serie?.urls[0].url}`}><Button variant="outline-warning">Official Web</Button></a>
     </article>
 
 }

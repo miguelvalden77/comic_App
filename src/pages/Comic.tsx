@@ -29,7 +29,7 @@ const Comic = ():JSX.Element =>{
     }
 
     if(loader === true)
-    return <h3>Loading ...</h3>
+    return <h3 className="loader">Loading ...</h3>
 
     return <article>
         <h3>{comic?.title}</h3>
