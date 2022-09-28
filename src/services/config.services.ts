@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const service = axios.create({baseURL: "http://localhost:5005/api/"})
+const service = axios.create({baseURL: "https://charactermarvelapp.herokuapp.com/api/"})
 
 service.interceptors.request.use((config)=>{
 
