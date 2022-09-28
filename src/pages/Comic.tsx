@@ -17,7 +17,7 @@ const Comic = ():JSX.Element =>{
         console.log(comic?.urls[0].url)
     }, [])
 
-    const getData = async (id: string)=>{
+    const getData = async (id: any)=>{
         try{
             
             const response = await getAComic(id)

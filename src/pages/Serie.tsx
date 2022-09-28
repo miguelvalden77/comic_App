@@ -16,7 +16,7 @@ const Serie = ():JSX.Element =>{
         getData(serieId)
     }, [])
 
-    const getData = async (id: string)=>{
+    const getData = async (id: any)=>{
         try{
             const response = await getASerie(id)
             console.log(response.data)

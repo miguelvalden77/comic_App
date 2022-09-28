@@ -3,13 +3,13 @@ import {useParams, Link} from "react-router-dom"
 import {getACharacter} from "../services/character.service"
 import character from "../interfaces/Interfaces"
 
-//
+// bootstrap
 import { Button } from "react-bootstrap"
 
 
 const CharacterDetails = ()=>{
 
-    const {charId} = useParams<string>()
+    const {charId} = useParams()
     const [character, setCharacter] = useState<character>()
     const [loader, setLoader] = useState<boolean>(true)
 
@@ -17,7 +17,7 @@ const CharacterDetails = ()=>{
         getData(charId)
     }, [])
 
-    const getData = async (id: string): Promise <void>=>{
+    const getData = async (id: any): Promise <void>=>{
         const response = await getACharacter(id)
         setCharacter(response.data.results[0])
         setLoader(false)
