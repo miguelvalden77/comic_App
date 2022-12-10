@@ -62,6 +62,7 @@ div.carousel.slide{
 
 .home-body{
     height: 100vh;
+    overflow: hidden;
 }
 
 /*Character*/
