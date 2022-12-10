@@ -18,7 +18,7 @@ const Home = ():JSX.Element =>{
     <Carousel>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 image"
           src={isBigScreen ? bg1 : bg4}
           alt="First slide"
         />
@@ -26,7 +26,7 @@ const Home = ():JSX.Element =>{
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 image"
           src={isBigScreen ? bg2 : bg5}
           alt="Second slide"
         />
@@ -34,7 +34,7 @@ const Home = ():JSX.Element =>{
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 image"
           src={isBigScreen ? bg3 : bg6}
           alt="Third slide"
         />

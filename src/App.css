@@ -60,6 +60,10 @@ div.carousel.slide{
     width: 100%;
 }
 
+.image{
+    height: 100vh;
+}
+
 .home-body{
     height: 100vh;
     overflow: hidden;
