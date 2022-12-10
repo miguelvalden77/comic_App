@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import {getAllCharacters} from "../services/character.service"
 import character from "../interfaces/Interfaces"
 import {Link, useNavigate} from "react-router-dom"
+import Loader from "../components/Loader"
 
 
 const Characters = ():JSX.Element =>{
@@ -31,7 +32,7 @@ const Characters = ():JSX.Element =>{
 
 
     if(loader === true)
-    return <h3 className="loader">Loading ...</h3>
+    return <Loader/>
 
     return <main className="character-container">
         {
