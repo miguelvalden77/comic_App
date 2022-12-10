@@ -156,8 +156,8 @@ div.carousel.slide{
   .loader {
     --loader-height: calc(var(--loader-size) / 7);
     display: flex;
-    padding-top: 4rem;
-    margin: auto;
+    padding-top: 6rem;
+    left: 40%;
     
     position: relative;
   }
