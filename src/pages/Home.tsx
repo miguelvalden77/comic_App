@@ -3,10 +3,12 @@ import bg2 from "../assets/wallpaper_2.jpeg"
 import bg3 from "../assets/wallpaper_3.jpg"
 // Estilos
 import Carousel from 'react-bootstrap/Carousel'
+import { useMediaQuery } from 'react-responsive'
 
 
 const Home = ():JSX.Element =>{
 
+  const isBigScreen = useMediaQuery({ query: '(min-width: 960px)' })
 
     return <main className="home-body">
     <Carousel>
