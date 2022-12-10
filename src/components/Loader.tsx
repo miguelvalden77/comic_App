@@ -1,8 +1,14 @@
 
 const Loader = ()=>{
-    return <div className="loader-container">
-        <div className="dottet-loader loader"></div>
-    </div> 
+    return <div className="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 }
 
 export default Loader
