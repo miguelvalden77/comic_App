@@ -11,7 +11,7 @@ a{
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap');
 
 .app{
-    font-family: "Kanit";
+    font-family: "Kanit", "Sans serif";
     min-height: 100vh;
     background-color: #080808c9;
     color: whitesmoke;
@@ -145,6 +145,29 @@ div.carousel.slide{
 
 .creator p{
     padding-bottom: 1rem;
+}
+
+.creators-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.creators-container h3{
+    font-family: "Bungee Spice";
+}
+
+h3.detail-name, h2.detail-name{
+    font-family: "Bungee Spice";
+    margin-bottom: 1rem;
+}
+
+.creator{
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 0.5rem;
 }
 
 .description{
