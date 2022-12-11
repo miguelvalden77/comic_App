@@ -3,6 +3,7 @@ import {useParams, useNavigate} from "react-router-dom"
 import {getAComic} from "../services/comic.service"
 import {comic} from "../interfaces/Interfaces"
 import {Button} from "react-bootstrap"
+import Loader from "../components/Loader"
 
 const Comic = ():JSX.Element =>{
 
@@ -30,7 +31,7 @@ const Comic = ():JSX.Element =>{
     }
 
     if(loader === true)
-    return <h3 className="loader">Loading ...</h3>
+    return <Loader/>
 
     return <article>
 
@@ -43,7 +44,7 @@ const Comic = ():JSX.Element =>{
             <a className="link t-center" href={`${comic?.urls[0].url}`}><Button variant="outline-danger">Official Web</Button></a>
         </section>
 
-        <section>
+        <section className="creators-section">
             <h2 className="t-center">Creators</h2>
             <div className="creators-container">
                 {comic?.creators.items.map((e, index)=>{

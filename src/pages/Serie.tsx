@@ -3,6 +3,7 @@ import {useParams, useNavigate} from "react-router-dom"
 import {getASerie} from "../services/serie.service"
 import {comic} from "../interfaces/Interfaces"
 import {Button} from "react-bootstrap"
+import Loader from "../components/Loader"
 
 const Serie = ():JSX.Element =>{
 
@@ -29,7 +30,7 @@ const Serie = ():JSX.Element =>{
     }
 
     if(loader === true)
-    return <h3 className="loader">Loading ...</h3>
+    return <Loader/>
 
     return <article className="detail-card">
         <h2 className="detail-name">{serie?.title}</h2>

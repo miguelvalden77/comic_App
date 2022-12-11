@@ -5,6 +5,7 @@ import character from "../interfaces/Interfaces"
 
 // bootstrap
 import { Button } from "react-bootstrap"
+import Loader from "../components/Loader"
 
 
 const CharacterDetails = ()=>{
@@ -25,7 +26,7 @@ const CharacterDetails = ()=>{
 
 
     if(loader)
-    return <h3 className="loader">Loading ...</h3>
+    return <Loader/>
 
     return <main className="detail-container">
         <article className="detail-card">
