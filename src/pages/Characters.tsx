@@ -22,7 +22,7 @@ const Characters = ():JSX.Element =>{
 
         try{
             const response: any = await getAllCharacters()
-            setCharacters(response.data)
+            setCharacters(response)
             setLoader(false)
         }
         catch(error){
