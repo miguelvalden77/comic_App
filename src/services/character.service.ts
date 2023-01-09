@@ -3,7 +3,7 @@ import service from "./config.services";
 
 const getAllCharacters = async ()=>{
     // return service.get("/character/all")
-    const response = await fetch("https://charactermarvelapp.herokuapp.com/api/character/all", {cache: "force-cache"})
+    const response = await fetch("https://comic-app-backend.onrender.com/api/character/all", {cache: "force-cache"})
     const data = await response.json()
     return data
 }
