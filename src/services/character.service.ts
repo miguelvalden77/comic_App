@@ -3,7 +3,9 @@ import service from "./config.services";
 
 const getAllCharacters = async ()=>{
     // return service.get("/character/all")
-    const response = await fetch("https://comic-app-backend.onrender.com/api/character/all", {cache: "force-cache"})
+    // http://localhost:5005
+    // https://comic-app-backend.onrender.com
+    const response = await fetch("http://localhost:5005/api/character/all", {cache: "force-cache"})
     const data = await response.json()
     return data
 }
