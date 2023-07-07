@@ -11,7 +11,6 @@ const Navbar = ():JSX.Element =>{
             </div>
 
             <div className="nav-container">
-                <p>Hola</p>
                 <NavLink className={"link"} to={"/"}>Home</NavLink>
                 <NavLink className={"link"} to={"/characters/all"}>Characters</NavLink>
             </div>
