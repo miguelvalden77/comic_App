@@ -1,10 +1,8 @@
 
-const Loader = ()=>{
-    return <h1 className="loader">Loading 
-        <span className="point"></span>
-        <span className="point"></span>
-        <span className="point"></span>
-    </h1>
+const Loader = () => {
+    return <div className="loader-container">
+        <div className="loader"></div>
+    </div>
 }
 
 export default Loader

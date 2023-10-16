@@ -1,37 +1,37 @@
 import { useEffect, useState } from "react"
-import {useParams, useNavigate} from "react-router-dom"
-import {getAComic} from "../services/comic.service"
-import {comic} from "../interfaces/Interfaces"
-import {Button} from "react-bootstrap"
+import { useParams, useNavigate } from "react-router-dom"
+import { getAComic } from "../services/comic.service"
+import { comic } from "../interfaces/Interfaces"
+import { Button } from "react-bootstrap"
 import Loader from "../components/Loader"
 
-const Comic = ():JSX.Element =>{
+const Comic = (): JSX.Element => {
 
-    const {comicId} = useParams<string>()
+    const { comicId } = useParams<string>()
     const navigate = useNavigate()
 
     const [comic, setComic] = useState<comic>()
     const [loader, setLoader] = useState<boolean>(true)
 
-    useEffect(()=>{
+    useEffect(() => {
         getData(comicId)
         console.log(comic?.urls[0].url)
     }, [])
 
-    const getData = async (id: any)=>{
-        try{
-            
+    const getData = async (id: any) => {
+        try {
+
             const response = await getAComic(id)
             setComic(response.data)
             setLoader(false)
         }
-        catch(error){
+        catch (error) {
             navigate("/error")
         }
     }
 
-    if(loader === true)
-    return <Loader/>
+    if (loader === true)
+        return <Loader />
 
     return <article>
 
@@ -45,9 +45,9 @@ const Comic = ():JSX.Element =>{
         </section>
 
         <section className="creators-section">
-            <h2 className="t-center">Creators</h2>
+            {comic?.creators.items.length! > 0 && <h2 className="t-center">Creators</h2>}
             <div className="creators-container">
-                {comic?.creators.items.map((e, index)=>{
+                {comic?.creators.items.map((e, index) => {
                     return <div className="creator" key={index}>
                         <h3 className="creator-name">{e.name}</h3>
                         <p>{e.role}</p>
